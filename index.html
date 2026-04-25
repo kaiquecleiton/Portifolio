@@ -1,174 +1,168 @@
 <!DOCTYPE html>
-<html lang="pt-br" style="background-color: #050505;">
+<html lang="pt-br" style="background-color: #0a0a0a;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#050505">
-    <title>LP PRO | Escala para Prestadores</title>
+    <meta name="theme-color" content="#0a0a0a">
+    <title>LP PRO | Sites para Profissionais de Elite</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap');
         
         body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #050505 !important; 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0a0a0a !important; 
             color: #ffffff;
             margin: 0;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3, .display-font { font-family: 'Space Grotesk', sans-serif; }
+        .heading-font { font-family: 'Archivo Black', sans-serif; }
 
-        /* Background sólido para evitar o erro de tela branca */
-        .main-bg {
-            background-color: #050505;
-            background-image: radial-gradient(circle at 50% -20%, #1e3a8a 0%, transparent 50%);
+        /* Estilo Industrial */
+        .industrial-bg {
+            background-color: #0a0a0a;
+            background-image: 
+                linear-gradient(45deg, #111 25%, transparent 25%), 
+                linear-gradient(-45deg, #111 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #111 75%), 
+                linear-gradient(-45deg, transparent 75%, #111 75%);
+            background-size: 20px 20px;
         }
 
-        /* Card estilo Dashboard de Resultados */
-        .result-card {
-            background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        /* Botão Ultra-Chamativo (Foco em Cliques) */
-        .btn-action {
-            background: linear-gradient(90deg, #2563eb, #06b6d4);
-            color: white;
-            font-weight: 800;
-            padding: 1.2rem 2.5rem;
-            border-radius: 12px;
+        /* Botão "Mão na Massa" */
+        .btn-heavy {
+            background: #ff5722;
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 4px;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
-            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 6px 6px 0px #8d2b0b;
+            transition: all 0.2s;
         }
-        .btn-action:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.6);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .btn-heavy:active {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0px #8d2b0b;
         }
 
-        .stat-badge {
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            color: #22c55e;
+        .border-orange { border-color: #ff5722; }
+        .text-orange { color: #ff5722; }
+
+        /* Card de Serviço Direto */
+        .work-card {
+            background: #111;
+            border-left: 8px solid #ff5722;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .work-card:hover {
+            background: #161616;
+            transform: translateX(10px);
         }
     </style>
 </head>
-<body class="antialiased main-bg">
+<body class="antialiased industrial-bg">
 
-    <nav class="fixed top-0 w-full z-[100] px-6 py-4 flex justify-between items-center backdrop-blur-md border-b border-white/5 bg-black/50">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold italic text-sm">LP</div>
-            <span class="font-bold tracking-tighter text-xl">PRO</span>
+    <nav class="fixed top-0 w-full z-[100] bg-[#0a0a0a] border-b-4 border-orange px-6 py-4 flex justify-between items-center">
+        <div class="heading-font text-2xl tracking-tighter italic">
+            LP<span class="text-orange">PRO</span>
         </div>
-        <div class="flex items-center gap-2 stat-badge px-3 py-1 rounded-full text-[10px] font-bold">
-            <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-            ONLINE PARA PROJETOS
+        <div class="hidden md:block text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+            Foco: Resultados e Orçamentos
         </div>
+        <a href="https://wa.me/5567981194737" class="bg-orange-600 text-white text-[10px] px-4 py-2 font-black uppercase">Orçamentos</a>
     </nav>
 
-    <header class="min-h-screen flex flex-col justify-center px-6 pt-24 text-center md:text-left md:max-w-7xl md:mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-                <span class="text-blue-500 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Especialista em Sites que Vendem</span>
-                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight display-font italic">
-                    NÃO É SÓ UM SITE.<br>
-                    <span class="text-blue-500 uppercase">É UMA MÁQUINA DE</span><br>
-                    <span class="text-gradient uppercase">FAZER DINHEIRO.</span>
-                </h1>
-                <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-xl">
-                    Seu serviço manual merece uma estrutura digital de elite. Atraia os melhores clientes e pare de brigar por preço.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4">
-                    <a href="https://wa.me/5567981194737" class="btn-action text-center">QUERO LOTAR MINHA AGENDA</a>
-                </div>
-            </div>
-            
-            <div class="result-card rounded-3xl p-8 border border-blue-500/20 relative" data-aos="zoom-in">
-                <div class="flex justify-between items-center mb-8">
-                    <span class="text-xs font-bold text-zinc-500 uppercase">Status da Sua Operação</span>
-                    <i class="fas fa-chart-line text-blue-500"></i>
-                </div>
-                <div class="space-y-6">
-                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center text-green-500">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <span class="font-bold text-sm">Novos Orçamentos</span>
-                        </div>
-                        <span class="text-green-500 font-black">+427%</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-500">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <span class="font-bold text-sm">Visibilidade Local</span>
-                        </div>
-                        <span class="text-blue-500 font-black">MÁXIMA</span>
-                    </div>
-                </div>
-                <div class="mt-8 pt-8 border-t border-white/5 text-center">
-                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold italic">Arquitetura de Conversão LP PRO</p>
-                </div>
-            </div>
+    <header class="min-h-screen flex flex-col justify-center px-6 pt-20 max-w-6xl mx-auto">
+        <div data-aos="fade-up">
+            <span class="bg-orange-600 text-black font-black text-[10px] px-3 py-1 uppercase mb-6 inline-block">Sua vitrine profissional</span>
+            <h1 class="heading-font text-5xl md:text-8xl leading-none mb-8 uppercase italic">
+                O SEU TRABALHO É <span class="text-orange">PESADO.</span><br>
+                SEU SITE NÃO PODE SER <span class="text-zinc-700">LEVE.</span>
+            </h1>
+            <p class="text-zinc-400 text-lg md:text-2xl mb-12 max-w-2xl border-l-4 border-zinc-800 pl-6">
+                Construo sites que passam confiança imediata. O cliente vê, entende que você é profissional e clica para fechar o orçamento. Sem enrolação.
+            </p>
+            <a href="https://wa.me/5567981194737" class="btn-heavy md:max-w-md">
+                QUERO MEU SITE AGORA <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
         </div>
     </header>
 
-    <section id="trabalhos" class="py-24 px-6 md:max-w-7xl md:mx-auto">
-        <div class="flex items-center gap-4 mb-16">
-            <h2 class="text-2xl font-black display-font italic uppercase">Domine seu <span class="text-blue-500">Mercado</span></h2>
-            <div class="h-px flex-grow bg-blue-500/20"></div>
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16">
+            <h2 class="heading-font text-3xl uppercase italic mb-2">Projetos que <span class="text-orange">Vendem</span></h2>
+            <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest">Clique nos exemplos abaixo para ver em ação</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up">
-                <i class="fas fa-bolt text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-black mb-2 text-lg uppercase italic">Elétrica Pro</h3>
-                <p class="text-zinc-500 text-xs mb-6">Sites para eletricistas que buscam serviços industriais e prediais.</p>
-                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href="https://zeromato67.vercel.app/" target="_blank" class="work-card group" data-aos="fade-right">
+                <div class="flex justify-between items-start mb-6">
+                    <i class="fas fa-leaf text-4xl text-orange"></i>
+                    <span class="text-[10px] font-black text-zinc-600 uppercase">Categoria: Limpeza</span>
+                </div>
+                <h3 class="heading-font text-2xl mb-4 uppercase">Zero Mato</h3>
+                <p class="text-zinc-400 text-sm mb-6 leading-relaxed">
+                    Layout otimizado para serviços de jardinagem e limpeza de terrenos. Foco em fotos reais e botão de contato rápido.
+                </p>
+                <div class="flex items-center gap-2 text-orange font-black text-xs uppercase group-hover:gap-4 transition-all">
+                    Ver site ao vivo <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
 
-            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-shield-alt text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-black mb-2 text-lg uppercase italic">Segurança</h3>
-                <p class="text-zinc-500 text-xs mb-6">Posicionamento para empresas de portões, cercas e monitoramento.</p>
-                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
-            </div>
+            <a href="https://eletricista-olive.vercel.app/" target="_blank" class="work-card group" data-aos="fade-left">
+                <div class="flex justify-between items-start mb-6">
+                    <i class="fas fa-shield-alt text-4xl text-orange"></i>
+                    <span class="text-[10px] font-black text-zinc-600 uppercase">Categoria: Segurança</span>
+                </div>
+                <h3 class="heading-font text-2xl mb-4 uppercase">Portão Pro</h3>
+                <p class="text-zinc-400 text-sm mb-6 leading-relaxed">
+                    Estratégia para instaladores de motores e cercas elétricas. Transmite segurança e autoridade técnica.
+                </p>
+                <div class="flex items-center gap-2 text-orange font-black text-xs uppercase group-hover:gap-4 transition-all">
+                    Ver site ao vivo <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+        </div>
+    </section>
 
-            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-snowflake text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-black mb-2 text-lg uppercase italic">Climatização</h3>
-                <p class="text-zinc-500 text-xs mb-6">Landing pages focadas em instalação e contratos de manutenção.</p>
-                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
+    <section class="bg-zinc-950 py-24 px-6 border-y-4 border-zinc-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center md:text-left">
+                <div class="text-orange heading-font text-5xl mb-4">01</div>
+                <h4 class="font-black uppercase mb-4 italic">Confiança Visual</h4>
+                <p class="text-zinc-500 text-sm">Se o site é bem feito, o cliente acredita que o seu serviço também é.</p>
             </div>
-
-            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-leaf text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-black mb-2 text-lg uppercase italic">Manutenção</h3>
-                <p class="text-zinc-500 text-xs mb-6">Design focado em limpeza de terrenos e gestão de áreas verdes.</p>
-                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
+            <div class="text-center md:text-left">
+                <div class="text-orange heading-font text-5xl mb-4">02</div>
+                <h4 class="font-black uppercase mb-4 italic">Botão de Ação</h4>
+                <p class="text-zinc-500 text-sm">O cliente não quer ler texto, ele quer clicar e falar no WhatsApp.</p>
+            </div>
+            <div class="text-center md:text-left">
+                <div class="text-orange heading-font text-5xl mb-4">03</div>
+                <h4 class="font-black uppercase mb-4 italic">Google Amigável</h4>
+                <p class="text-zinc-500 text-sm">Sites leves que aparecem primeiro quando alguém busca o seu serviço.</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 border-t border-white/5 text-center">
-        <h2 class="text-3xl md:text-5xl font-black display-font mb-8 italic italic">PRONTO PARA O <span class="text-blue-500">PRÓXIMO NÍVEL?</span></h2>
-        <a href="https://wa.me/5567981194737" class="btn-action">FALAR COM O ESPECIALISTA</a>
-        <p class="mt-12 text-zinc-600 text-[10px] font-bold uppercase tracking-[0.4em]">LP PRO • Estratégia Digital de Elite • 2026</p>
+    <footer class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="heading-font text-4xl md:text-7xl mb-12 uppercase italic">CHEGA DE <span class="text-orange">PERDER</span> CLIENTE POR FALTA DE SITE.</h2>
+            <a href="https://wa.me/5567981194737" class="btn-heavy text-lg md:text-2xl mx-auto">
+                FALAR COM O DESENVOLVEDOR <i class="fab fa-whatsapp"></i>
+            </a>
+            <p class="mt-16 text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em]">LP PRO • 2026 • MS - Brasil</p>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
