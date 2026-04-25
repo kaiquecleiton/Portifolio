@@ -1,132 +1,174 @@
 <!DOCTYPE html>
-<html lang="pt-br" style="background-color: #000000;">
+<html lang="pt-br" style="background-color: #050505;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <title>LP PRO | Imperial Architecture</title>
+    <meta name="theme-color" content="#050505">
+    <title>LP PRO | Escala para Prestadores</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap');
         
         body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #000000 !important; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050505 !important; 
             color: #ffffff;
             margin: 0;
+            overflow-x: hidden;
         }
 
-        .display-font { font-family: 'Syncopate', sans-serif; }
+        h1, h2, h3, .display-font { font-family: 'Space Grotesk', sans-serif; }
 
-        /* Forçando o gradiente a ser escuro desde o início */
-        .mesh-gradient {
-            background: #000000;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.18) 0, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.12) 0, transparent 50%);
+        /* Background sólido para evitar o erro de tela branca */
+        .main-bg {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 50% -20%, #1e3a8a 0%, transparent 50%);
         }
 
-        .text-outline {
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+        /* Card estilo Dashboard de Resultados */
+        .result-card {
+            background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .bento-item {
-            background: rgba(15, 15, 15, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
+        /* Botão Ultra-Chamativo (Foco em Cliques) */
+        .btn-action {
+            background: linear-gradient(90deg, #2563eb, #06b6d4);
+            color: white;
+            font-weight: 800;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.6);
         }
 
-        .btn-gold {
-            background: #D4AF37;
-            color: #000000;
-            font-weight: 900;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-            display: inline-block;
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .gold-glow {
-            color: #D4AF37;
-            text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+        .stat-badge {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: #22c55e;
         }
     </style>
 </head>
-<body class="antialiased mesh-gradient">
+<body class="antialiased main-bg">
 
-    <nav class="fixed top-0 w-full z-[100] px-6 py-5 flex justify-between items-center backdrop-blur-xl border-b border-white/10 bg-black/80">
-        <div class="display-font text-lg tracking-[0.2em] flex items-center gap-2">
-            <div class="w-7 h-7 border-2 border-[#D4AF37] rotate-45 flex items-center justify-center">
-                <span class="rotate-[-45deg] text-[9px] text-[#D4AF37] font-bold">LP</span>
-            </div>
-            <span class="text-white">PRO</span>
+    <nav class="fixed top-0 w-full z-[100] px-6 py-4 flex justify-between items-center backdrop-blur-md border-b border-white/5 bg-black/50">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold italic text-sm">LP</div>
+            <span class="font-bold tracking-tighter text-xl">PRO</span>
         </div>
-        <a href="https://wa.me/5567981194737" class="text-[10px] font-black border-b-2 border-[#D4AF37] pb-0.5 text-white uppercase tracking-widest">Contato</a>
+        <div class="flex items-center gap-2 stat-badge px-3 py-1 rounded-full text-[10px] font-bold">
+            <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+            ONLINE PARA PROJETOS
+        </div>
     </nav>
 
-    <header class="min-h-screen flex flex-col justify-center px-6 pt-20">
-        <div class="max-w-6xl mx-auto w-full">
-            <p class="text-[#D4AF37] display-font text-[9px] tracking-[0.4em] mb-4 uppercase">The Gold Standard</p>
-            <h1 class="text-4xl md:text-8xl leading-[0.9] font-black display-font mb-10 italic">
-                WE BUILD<br>
-                <span class="text-outline">EMPIRES,</span><br>
-                <span class="gold-glow uppercase">NOT SITES.</span>
-            </h1>
-            <div class="max-w-md border-l-2 border-[#D4AF37] pl-6 mb-10">
-                <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
-                    Arquitetura de dados e design de luxo para marcas que buscam dominância digital imediata.
+    <header class="min-h-screen flex flex-col justify-center px-6 pt-24 text-center md:text-left md:max-w-7xl md:mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="text-blue-500 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Especialista em Sites que Vendem</span>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight display-font italic">
+                    NÃO É SÓ UM SITE.<br>
+                    <span class="text-blue-500 uppercase">É UMA MÁQUINA DE</span><br>
+                    <span class="text-gradient uppercase">FAZER DINHEIRO.</span>
+                </h1>
+                <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-xl">
+                    Seu serviço manual merece uma estrutura digital de elite. Atraia os melhores clientes e pare de brigar por preço.
                 </p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <a href="https://wa.me/5567981194737" class="btn-action text-center">QUERO LOTAR MINHA AGENDA</a>
+                </div>
             </div>
-            <a href="#projects" class="btn-gold px-10 py-4 text-xs uppercase tracking-widest">Explorar Cases</a>
+            
+            <div class="result-card rounded-3xl p-8 border border-blue-500/20 relative" data-aos="zoom-in">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xs font-bold text-zinc-500 uppercase">Status da Sua Operação</span>
+                    <i class="fas fa-chart-line text-blue-500"></i>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center text-green-500">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <span class="font-bold text-sm">Novos Orçamentos</span>
+                        </div>
+                        <span class="text-green-500 font-black">+427%</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-500">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <span class="font-bold text-sm">Visibilidade Local</span>
+                        </div>
+                        <span class="text-blue-500 font-black">MÁXIMA</span>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 text-center">
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold italic">Arquitetura de Conversão LP PRO</p>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="display-font text-2xl uppercase mb-12 tracking-tighter italic">Selected <span class="text-outline">Works</span></h2>
+    <section id="trabalhos" class="py-24 px-6 md:max-w-7xl md:mx-auto">
+        <div class="flex items-center gap-4 mb-16">
+            <h2 class="text-2xl font-black display-font italic uppercase">Domine seu <span class="text-blue-500">Mercado</span></h2>
+            <div class="h-px flex-grow bg-blue-500/20"></div>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="md:col-span-2 md:row-span-2 bento-item rounded-[2rem] p-8 flex flex-col justify-between min-h-[400px] relative overflow-hidden" data-aos="fade-up">
-                <div class="relative z-10">
-                    <span class="text-[#D4AF37] text-[10px] font-black uppercase tracking-widest">Manutenção de Elite</span>
-                    <h3 class="text-3xl font-black display-font mt-2 italic">ZERO MATO</h3>
-                </div>
-                <a href="https://zeromato67.vercel.app/" target="_blank" class="relative z-10 text-[10px] font-bold flex items-center gap-2">VER PROJETO <i class="fas fa-arrow-right text-[#D4AF37]"></i></a>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up">
+                <i class="fas fa-bolt text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="font-black mb-2 text-lg uppercase italic">Elétrica Pro</h3>
+                <p class="text-zinc-500 text-xs mb-6">Sites para eletricistas que buscam serviços industriais e prediais.</p>
+                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
             </div>
 
-            <div class="md:col-span-2 bento-item rounded-[2rem] p-6 flex justify-between items-center" data-aos="fade-up">
-                <div>
-                    <span class="text-zinc-500 text-[9px] font-bold uppercase">Security</span>
-                    <h3 class="text-xl font-bold display-font italic">PORTÃO PRO</h3>
-                </div>
-                <div class="w-12 h-12 bg-zinc-900 rounded-full flex items-center justify-center border border-[#D4AF37]/30">
-                    <i class="fas fa-shield-alt text-[#D4AF37]"></i>
-                </div>
+            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-shield-alt text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="font-black mb-2 text-lg uppercase italic">Segurança</h3>
+                <p class="text-zinc-500 text-xs mb-6">Posicionamento para empresas de portões, cercas e monitoramento.</p>
+                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
             </div>
 
-            <div class="bento-item rounded-[2rem] p-6" data-aos="fade-up">
-                <i class="fas fa-bolt text-2xl text-[#D4AF37] mb-4"></i>
-                <h3 class="text-sm font-bold display-font">SOS ELETRICISTA</h3>
+            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-snowflake text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="font-black mb-2 text-lg uppercase italic">Climatização</h3>
+                <p class="text-zinc-500 text-xs mb-6">Landing pages focadas em instalação e contratos de manutenção.</p>
+                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
             </div>
 
-            <div class="bento-item rounded-[2rem] p-6" data-aos="fade-up">
-                <i class="fas fa-snowflake text-2xl text-cyan-500 mb-4"></i>
-                <h3 class="text-sm font-bold display-font">CLIMAX PRO</h3>
+            <div class="result-card p-6 rounded-2xl hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-leaf text-3xl text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="font-black mb-2 text-lg uppercase italic">Manutenção</h3>
+                <p class="text-zinc-500 text-xs mb-6">Design focado em limpeza de terrenos e gestão de áreas verdes.</p>
+                <a href="#" class="text-[10px] font-black text-blue-400 hover:text-white uppercase tracking-widest">Ver Exemplo</a>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 bg-[#050505] border-t border-white/5">
-        <div class="max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-10">
-            <div>
-                <h2 class="display-font text-4xl md:text-6xl mb-2 italic">LET'S <span class="text-[#D4AF37]">BUILD.</span></h2>
-                <p class="text-zinc-600 text-[9px] uppercase tracking-[0.5em]">Versão Imperial 2026</p>
-            </div>
-            <a href="https://wa.me/5567981194737" class="btn-gold px-12 py-5 text-sm uppercase tracking-widest">Iniciar Império</a>
-        </div>
+    <footer class="py-20 px-6 border-t border-white/5 text-center">
+        <h2 class="text-3xl md:text-5xl font-black display-font mb-8 italic italic">PRONTO PARA O <span class="text-blue-500">PRÓXIMO NÍVEL?</span></h2>
+        <a href="https://wa.me/5567981194737" class="btn-action">FALAR COM O ESPECIALISTA</a>
+        <p class="mt-12 text-zinc-600 text-[10px] font-bold uppercase tracking-[0.4em]">LP PRO • Estratégia Digital de Elite • 2026</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
