@@ -3,240 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0B1F33">
-<title>Kaique Builds | Sites com estrutura, não improviso</title>
-<meta name="description" content="Sites planejados como uma obra: primeiro a planta, depois a construção. Estrutura pensada pra converter clientes reais de negócios locais.">
-<meta property="og:title" content="Kaique Builds | Sites com estrutura, não improviso">
-<meta property="og:description" content="Primeiro a planta, depois a obra. Sites planejados pra converter, não só existir.">
+<meta name="theme-color" content="#0A0A0A">
+<title>Kaique Builds | Sites que ganham a briga pelo cliente</title>
+<meta name="description" content="Sites de alta conversão para quem não aceita ficar atrás da concorrência. Estrutura, força visual e resultado.">
+<meta property="og:title" content="Kaique Builds">
+<meta property="og:description" content="Sites que ganham a briga pelo cliente.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B1F33'/%3E%3Ctext x='50' y='68' font-size='56' font-weight='700' fill='%23F2B705' text-anchor='middle' font-family='Georgia'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='72' font-size='64' font-weight='900' fill='%23E10600' text-anchor='middle' font-family='Arial'%3EK%3C/text%3E%3C/svg%3E">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --navy:#0B1F33;
-    --navy-deep:#081524;
-    --card:#122C46;
-    --blueline:#5C8AAD;
-    --paper:#EDE8DC;
-    --paper-ink:#0B1F33;
-    --ink:#F5F5F0;
-    --yellow:#F2B705;
+    --black:#0A0A0A;
+    --black-deep:#000000;
+    --red:#E10600;
+    --paper:#F5F5F0;
+    --gray:#9A9A9A;
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    background:var(--navy);
-    color:var(--ink);
-    font-family:'Space Grotesk',sans-serif;
+    background:var(--black);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
     overflow-x:hidden;
   }
-  .mono{font-family:'IBM Plex Mono',monospace;}
-  .grid-bg{
-    background-image:
-      linear-gradient(var(--card) 1px, transparent 1px),
-      linear-gradient(90deg, var(--card) 1px, transparent 1px);
-    background-size:28px 28px;
-    background-position:-1px -1px;
+  .display{
+    font-family:'Anton',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:0.95;
   }
-  .tag{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
-    color:var(--blueline);
-    letter-spacing:0.04em;
+  .banner{
+    position:relative;
+    display:inline-block;
   }
-  .frame{
-    border:1px solid var(--card);
+  .banner::before{
+    content:'';
+    position:absolute;
+    inset:-6% -4%;
+    background:var(--red);
+    transform:skewY(-2deg);
+    z-index:-1;
+    transform-origin:left;
+    animation:slide-in .7s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes slide-in{
+    from{ transform:skewY(-2deg) scaleX(0); }
+    to{ transform:skewY(-2deg) scaleX(1); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .banner::before{ animation:none; }
   }
   .btn-primary{
-    background:var(--yellow);
-    color:var(--navy-deep);
-    font-weight:700;
-    padding:0.95rem 1.75rem;
+    background:var(--red);
+    color:#fff;
+    font-family:'Anton',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    padding:1rem 2rem;
     display:inline-flex;
     align-items:center;
-    gap:10px;
-    border:1px solid var(--yellow);
-    transition:transform .15s ease, background .15s ease;
+    gap:12px;
+    border:3px solid var(--paper);
+    transition:transform .15s ease;
   }
   .btn-primary:active{ transform:translate(2px,2px); }
-  .btn-primary:hover{ background:#ffcc33; }
-  .btn-ghost{
-    border:1px solid var(--blueline);
-    color:var(--ink);
-    padding:0.85rem 1.5rem;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+  .card{
+    background:#141414;
+    border:2px solid #2a2a2a;
+    padding:1.75rem;
+    position:relative;
+    transition:border-color .2s ease, background .2s ease;
   }
-  .draw{
-    stroke-dasharray:1400;
-    stroke-dashoffset:1400;
-    animation:draw-in 2s ease-out forwards;
+  .card:hover{ border-color:var(--red); background:#181818; }
+  .badge{
+    font-family:'Anton',sans-serif;
+    background:var(--red);
+    color:#fff;
+    padding:2px 10px;
+    display:inline-block;
+    position:absolute;
+    top:-14px;
+    left:20px;
+    font-size:14px;
   }
-  .draw-delay{ animation-delay:.4s; }
-  @keyframes draw-in{ to{ stroke-dashoffset:0; } }
-  @media (prefers-reduced-motion: reduce){
-    .draw{ animation:none; stroke-dashoffset:0; }
+  .stat-strip{
+    background:var(--red);
+    color:var(--black-deep);
+    clip-path:polygon(0 4%, 100% 0, 100% 96%, 0 100%);
   }
-  .note-card{
-    background:var(--paper);
-    color:var(--paper-ink);
-  }
-  .sticky-cta{
-    position:fixed; bottom:0; left:0; width:100%; z-index:90; display:none;
-  }
+  table.tape th, table.tape td{ padding:0.9rem 1rem; text-align:left; }
+  table.tape th{ background:var(--red); color:#fff; font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; letter-spacing:0.03em; }
+  table.tape td{ border-bottom:1px solid #2a2a2a; }
+  .sticky-cta{ position:fixed; bottom:0; left:0; width:100%; z-index:90; display:none; }
   @media (max-width:768px){ .sticky-cta{ display:flex; } }
-  table.spec th, table.spec td{ padding:0.9rem 1rem; text-align:left; }
-  table.spec th{ font-weight:700; border-bottom:1px solid var(--blueline); }
-  table.spec td{ border-bottom:1px solid var(--card); }
 </style>
 </head>
 <body class="antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full z-[100] bg-[var(--navy)]/95 backdrop-blur border-b border-[var(--card)] px-5 md:px-10 py-3 flex justify-between items-center">
-    <div class="flex items-center gap-3">
-      <div class="border border-[var(--blueline)] px-2 py-1">
-        <div class="text-sm md:text-base font-bold leading-none">KAIQUE BUILDS</div>
-        <div class="tag leading-none mt-1">sites sob medida</div>
-      </div>
-    </div>
-    <a href="https://wa.me/5567981194737" class="btn-primary text-xs md:text-sm">Pedir orçamento</a>
+  <nav class="fixed top-0 w-full z-[100] bg-[var(--black)]/95 backdrop-blur border-b-2 border-[var(--red)] px-5 md:px-10 py-3 flex justify-between items-center">
+    <div class="display text-lg md:text-2xl">Kaique<span class="text-[var(--red)]"> Builds</span></div>
+    <a href="https://wa.me/5567981194737" class="btn-primary text-xs md:text-sm py-2 px-4 border-2">Falar agora</a>
   </nav>
 
   <!-- HERO -->
-  <header class="pt-28 md:pt-32 pb-16 px-5 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <div>
-      <p class="tag mb-5">Sheet 01 — Diagnóstico</p>
-      <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
-        Cada site que eu construo começa como planta, antes de virar obra.
-      </h1>
-      <p class="text-[var(--ink)]/80 text-base md:text-lg mb-8 max-w-md">
-        Eu desenho a estrutura, testo o caminho até o clique e só depois construo. Assim o seu site vende — não só existe.
-      </p>
-      <div class="flex flex-wrap gap-4 mb-6">
-        <a href="https://wa.me/5567981194737" class="btn-primary">Pedir orçamento</a>
-        <a href="#projetos" class="btn-ghost">Ver projetos entregues</a>
-      </div>
-      <p class="tag">Resposta em poucas horas · sem compromisso</p>
-    </div>
-
-    <div class="grid-bg p-4">
-      <svg viewBox="0 0 420 500" class="w-full h-auto" role="img" aria-label="Diagrama técnico da estrutura de um site">
-        <rect x="55" y="30" width="310" height="440" rx="3" fill="none" stroke="var(--ink)" stroke-width="2" class="draw"/>
-        <rect x="55" y="30" width="310" height="46" fill="none" stroke="var(--yellow)" stroke-width="1.5" class="draw draw-delay"/>
-        <text x="65" y="58" class="mono" font-size="10" fill="var(--yellow)">header</text>
-
-        <rect x="55" y="76" width="310" height="130" fill="none" stroke="var(--ink)" stroke-width="1" stroke-dasharray="4 3"/>
-        <text x="65" y="94" class="mono" font-size="9" fill="var(--blueline)">hero — 100vh</text>
-
-        <rect x="85" y="150" width="250" height="38" fill="none" stroke="var(--yellow)" stroke-width="1.5"/>
-        <text x="95" y="173" class="mono" font-size="9" fill="var(--yellow)">cta</text>
-
-        <rect x="55" y="216" width="148" height="84" fill="none" stroke="var(--ink)" stroke-width="1"/>
-        <rect x="217" y="216" width="148" height="84" fill="none" stroke="var(--ink)" stroke-width="1"/>
-        <text x="65" y="232" class="mono" font-size="8" fill="var(--blueline)">projetos</text>
-
-        <rect x="55" y="312" width="310" height="66" fill="none" stroke="var(--ink)" stroke-width="1" stroke-dasharray="4 3"/>
-        <text x="65" y="328" class="mono" font-size="8" fill="var(--blueline)">prova social</text>
-
-        <rect x="55" y="390" width="310" height="50" fill="none" stroke="var(--ink)" stroke-width="1"/>
-        <text x="65" y="410" class="mono" font-size="8" fill="var(--blueline)">contato</text>
-
-        <line x1="385" y1="30" x2="385" y2="470" stroke="var(--blueline)" stroke-width="0.75"/>
-        <line x1="380" y1="30" x2="390" y2="30" stroke="var(--blueline)" stroke-width="0.75"/>
-        <line x1="380" y1="470" x2="390" y2="470" stroke="var(--blueline)" stroke-width="0.75"/>
-        <text x="396" y="255" class="mono" font-size="8" fill="var(--blueline)" transform="rotate(90 396 255)">estrutura completa</text>
-      </svg>
-    </div>
+  <header class="pt-32 md:pt-40 pb-20 px-5 md:px-10 max-w-5xl mx-auto">
+    <h1 class="display text-4xl md:text-7xl mb-8">
+      Enquanto seu site<br>
+      <span class="banner px-2">não converte,</span><br>
+      seu concorrente fatura.
+    </h1>
+    <p class="text-[var(--gray)] text-base md:text-xl mb-10 max-w-xl">
+      Eu construo sites de alta performance pra profissionais que não aceitam ficar pra trás. Estrutura, força visual e um caminho direto até o clique.
+    </p>
+    <a href="https://wa.me/5567981194737" class="btn-primary text-base md:text-lg">Falar com Kaique</a>
   </header>
 
-  <!-- PROJETOS -->
-  <section id="projetos" class="py-20 px-5 md:px-10 max-w-6xl mx-auto border-t border-[var(--card)]">
-    <p class="tag mb-2">Sheet 02 — Projetos entregues</p>
-    <h2 class="text-2xl md:text-3xl font-bold mb-10">O que já foi construído</h2>
+  <!-- STATS -->
+  <section class="stat-strip py-14 px-5 md:px-10 my-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-3 gap-6 text-center">
+      <div>
+        <p class="display text-4xl md:text-6xl">12+</p>
+        <p class="font-semibold text-xs md:text-sm uppercase tracking-wide mt-1">Sites entregues</p>
+      </div>
+      <div>
+        <p class="display text-4xl md:text-6xl">100%</p>
+        <p class="font-semibold text-xs md:text-sm uppercase tracking-wide mt-1">Otimizado pra celular</p>
+      </div>
+      <div>
+        <p class="display text-4xl md:text-6xl">24H</p>
+        <p class="font-semibold text-xs md:text-sm uppercase tracking-wide mt-1">Tempo de resposta</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="divide-y divide-[var(--card)]">
-      <a href="https://zeromato67.vercel.app/" target="_blank" class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 group">
-        <span class="mono text-[var(--blueline)] text-sm w-16 shrink-0">P.01</span>
-        <span class="font-bold text-lg w-full md:w-48 shrink-0">Zero Mato</span>
-        <span class="text-[var(--ink)]/70 text-sm flex-1">Jardinagem e manutenção — foco em autoridade e orçamento rápido pelo WhatsApp.</span>
-        <span class="mono text-sm text-[var(--yellow)] group-hover:underline shrink-0">Ver site</span>
+  <!-- PROJETOS -->
+  <section class="py-20 px-5 md:px-10 max-w-5xl mx-auto">
+    <h2 class="display text-3xl md:text-5xl mb-12">Projetos que já <span class="text-[var(--red)]">venceram</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+      <a href="https://zeromato67.vercel.app/" target="_blank" class="card">
+        <span class="badge">01</span>
+        <h3 class="display text-2xl mb-3 mt-2">Zero Mato</h3>
+        <p class="text-[var(--gray)] text-sm mb-4">Jardinagem e manutenção. Foco em autoridade e orçamento rápido.</p>
+        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
       </a>
-      <a href="https://eletricista-olive.vercel.app/" target="_blank" class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 group">
-        <span class="mono text-[var(--blueline)] text-sm w-16 shrink-0">P.02</span>
-        <span class="font-bold text-lg w-full md:w-48 shrink-0">Portão Pro</span>
-        <span class="text-[var(--ink)]/70 text-sm flex-1">Segurança e automação residencial — estrutura pensada pra transmitir confiança técnica.</span>
-        <span class="mono text-sm text-[var(--yellow)] group-hover:underline shrink-0">Ver site</span>
+      <a href="https://eletricista-olive.vercel.app/" target="_blank" class="card">
+        <span class="badge">02</span>
+        <h3 class="display text-2xl mb-3 mt-2">Portão Pro</h3>
+        <p class="text-[var(--gray)] text-sm mb-4">Segurança e automação residencial. Autoridade técnica e confiança.</p>
+        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
       </a>
-      <a href="https://zeromat.vercel.app/" target="_blank" class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 group">
-        <span class="mono text-[var(--blueline)] text-sm w-16 shrink-0">P.03</span>
-        <span class="font-bold text-lg w-full md:w-48 shrink-0">Clímax</span>
-        <span class="text-[var(--ink)]/70 text-sm flex-1">Climatização de alto padrão — layout voltado pra fechamento de contratos VIP.</span>
-        <span class="mono text-sm text-[var(--yellow)] group-hover:underline shrink-0">Ver site</span>
+      <a href="https://zeromat.vercel.app/" target="_blank" class="card">
+        <span class="badge">03</span>
+        <h3 class="display text-2xl mb-3 mt-2">Clímax</h3>
+        <p class="text-[var(--gray)] text-sm mb-4">Climatização de alto padrão. Layout focado em contratos VIP.</p>
+        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
       </a>
-      <a href="https://www.eletricistacampograndems.com/" target="_blank" class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-6 group">
-        <span class="mono text-[var(--blueline)] text-sm w-16 shrink-0">P.04</span>
-        <span class="font-bold text-lg w-full md:w-48 shrink-0">SOS Eletricista</span>
-        <span class="text-[var(--ink)]/70 text-sm flex-1">Atendimento de emergência — estrutura otimizada pro clique imediato no WhatsApp.</span>
-        <span class="mono text-sm text-[var(--yellow)] group-hover:underline shrink-0">Ver site</span>
+      <a href="https://www.eletricistacampograndems.com/" target="_blank" class="card">
+        <span class="badge">04</span>
+        <h3 class="display text-2xl mb-3 mt-2">SOS Eletricista</h3>
+        <p class="text-[var(--gray)] text-sm mb-4">Emergência 24h. Clique direto pro WhatsApp em qualquer tela.</p>
+        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
       </a>
     </div>
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section class="py-20 px-5 md:px-10 max-w-6xl mx-auto border-t border-[var(--card)]">
-    <p class="tag mb-2">Sheet 03 — Prova social</p>
-    <h2 class="text-2xl md:text-3xl font-bold mb-10">Quem contratou aprova</h2>
+  <section class="py-20 px-5 md:px-10 max-w-5xl mx-auto border-t border-[#2a2a2a]">
+    <h2 class="display text-3xl md:text-5xl mb-12">Quem contratou <span class="text-[var(--red)]">aprova</span></h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="note-card p-6">
-        <p class="text-sm mb-6 leading-relaxed">"Depoimento real do cliente aqui — conte o resultado prático que ele teve depois do site no ar."</p>
+      <div class="card border-t-4 border-t-[var(--red)]">
+        <p class="text-5xl text-[var(--red)] leading-none mb-2">"</p>
+        <p class="text-sm mb-6 text-[var(--paper)]/90">Depoimento real do cliente aqui — o resultado prático depois do site no ar.</p>
         <p class="font-bold text-sm">Nome do cliente</p>
-        <p class="mono text-xs opacity-70">Ramo · Cidade</p>
+        <p class="text-[var(--gray)] text-xs">Ramo · Cidade</p>
       </div>
-      <div class="note-card p-6">
-        <p class="text-sm mb-6 leading-relaxed">"Depoimento real do cliente aqui — conte o resultado prático que ele teve depois do site no ar."</p>
+      <div class="card border-t-4 border-t-[var(--red)]">
+        <p class="text-5xl text-[var(--red)] leading-none mb-2">"</p>
+        <p class="text-sm mb-6 text-[var(--paper)]/90">Depoimento real do cliente aqui — o resultado prático depois do site no ar.</p>
         <p class="font-bold text-sm">Nome do cliente</p>
-        <p class="mono text-xs opacity-70">Ramo · Cidade</p>
+        <p class="text-[var(--gray)] text-xs">Ramo · Cidade</p>
       </div>
-      <div class="note-card p-6">
-        <p class="text-sm mb-6 leading-relaxed">"Depoimento real do cliente aqui — conte o resultado prático que ele teve depois do site no ar."</p>
+      <div class="card border-t-4 border-t-[var(--red)]">
+        <p class="text-5xl text-[var(--red)] leading-none mb-2">"</p>
+        <p class="text-sm mb-6 text-[var(--paper)]/90">Depoimento real do cliente aqui — o resultado prático depois do site no ar.</p>
         <p class="font-bold text-sm">Nome do cliente</p>
-        <p class="mono text-xs opacity-70">Ramo · Cidade</p>
+        <p class="text-[var(--gray)] text-xs">Ramo · Cidade</p>
       </div>
     </div>
   </section>
 
   <!-- PACOTES -->
-  <section class="py-20 px-5 md:px-10 max-w-6xl mx-auto border-t border-[var(--card)]">
-    <p class="tag mb-2">Sheet 04 — Investimento</p>
-    <h2 class="text-2xl md:text-3xl font-bold mb-10">Escolha o pacote</h2>
+  <section class="py-20 px-5 md:px-10 max-w-5xl mx-auto border-t border-[#2a2a2a]">
+    <h2 class="display text-3xl md:text-5xl mb-12">Escolha seu <span class="text-[var(--red)]">pacote</span></h2>
     <div class="overflow-x-auto">
-      <table class="spec w-full text-sm min-w-[560px]">
+      <table class="tape w-full text-sm min-w-[560px]">
         <thead>
-          <tr><th>Pacote</th><th>O que inclui</th><th>Investimento</th><th></th></tr>
+          <tr><th>Pacote</th><th>Inclui</th><th>Valor</th><th></th></tr>
         </thead>
         <tbody>
           <tr>
             <td class="font-bold">Essencial</td>
-            <td class="text-[var(--ink)]/70">1 página, mobile, botão de WhatsApp</td>
-            <td class="mono">R$ XXX</td>
-            <td><a href="https://wa.me/5567981194737" class="mono text-[var(--yellow)] hover:underline">Pedir</a></td>
+            <td class="text-[var(--gray)]">1 página, mobile, botão de WhatsApp</td>
+            <td class="font-bold">R$ XXX</td>
+            <td><a href="https://wa.me/5567981194737" class="text-[var(--red)] font-semibold hover:underline">Pedir</a></td>
           </tr>
           <tr>
             <td class="font-bold">Profissional</td>
-            <td class="text-[var(--ink)]/70">Site completo, SEO básico, galeria, suporte</td>
-            <td class="mono">R$ XXX</td>
-            <td><a href="https://wa.me/5567981194737" class="mono text-[var(--yellow)] hover:underline">Pedir</a></td>
+            <td class="text-[var(--gray)]">Site completo, SEO básico, galeria, suporte</td>
+            <td class="font-bold">R$ XXX</td>
+            <td><a href="https://wa.me/5567981194737" class="text-[var(--red)] font-semibold hover:underline">Pedir</a></td>
           </tr>
           <tr>
             <td class="font-bold">Elite</td>
-            <td class="text-[var(--ink)]/70">Tudo do Profissional + domínio, hospedagem e integrações</td>
-            <td class="mono">R$ XXX</td>
-            <td><a href="https://wa.me/5567981194737" class="mono text-[var(--yellow)] hover:underline">Pedir</a></td>
+            <td class="text-[var(--gray)]">Tudo do Profissional + domínio, hospedagem, integrações</td>
+            <td class="font-bold">R$ XXX</td>
+            <td><a href="https://wa.me/5567981194737" class="text-[var(--red)] font-semibold hover:underline">Pedir</a></td>
           </tr>
         </tbody>
       </table>
@@ -244,30 +230,26 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section class="py-24 px-5 md:px-10 border-t border-[var(--card)]" style="background:var(--navy-deep);">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Vamos desenhar o site do seu negócio.</h2>
-      <p class="text-[var(--ink)]/70 text-base md:text-lg mb-10">Sem promessa vaga. Estrutura, prazo e preço definidos antes de qualquer linha de código.</p>
-      <a href="https://wa.me/5567981194737" class="btn-primary text-base md:text-lg px-8">Pedir orçamento</a>
-    </div>
+  <section class="py-24 px-5 md:px-10 border-t-4 border-[var(--red)] text-center">
+    <h2 class="display text-4xl md:text-7xl mb-8 max-w-3xl mx-auto leading-none">
+      Pare de perder pra quem tem site pior que o seu trabalho.
+    </h2>
+    <a href="https://wa.me/5567981194737" class="btn-primary text-base md:text-xl">Falar com Kaique agora</a>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-14 px-5 md:px-10 border-t border-[var(--card)]">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="border border-[var(--blueline)] px-2 py-1 inline-block">
-        <div class="text-sm font-bold leading-none">KAIQUE BUILDS</div>
-        <div class="tag leading-none mt-1">sites sob medida</div>
+  <footer class="py-12 px-5 md:px-10 border-t border-[#2a2a2a]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="display text-xl">Kaique<span class="text-[var(--red)]"> Builds</span></div>
+      <div class="flex gap-6 text-sm">
+        <a href="https://wa.me/5567981194737" class="hover:text-[var(--red)]">WhatsApp</a>
+        <a href="#" class="hover:text-[var(--red)]">Instagram</a>
       </div>
-      <div class="flex gap-6 mono text-sm">
-        <a href="https://wa.me/5567981194737" class="hover:text-[var(--yellow)]">WhatsApp</a>
-        <a href="#" class="hover:text-[var(--yellow)]">Instagram</a>
-      </div>
-      <p class="mono text-xs opacity-50">© 2026 Kaique Builds · Mato Grosso do Sul</p>
+      <p class="text-[var(--gray)] text-xs">© 2026 Kaique Builds · Mato Grosso do Sul</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/5567981194737" class="sticky-cta btn-primary justify-center rounded-none text-sm py-4">Pedir orçamento</a>
+  <a href="https://wa.me/5567981194737" class="sticky-cta btn-primary justify-center rounded-none text-sm py-4 border-0">Falar com Kaique agora</a>
 
 </body>
 </html>
