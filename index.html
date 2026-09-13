@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0a">
-    <title>LP PRO | Arquitetura Digital de Elite</title>
+    <title>KAIQUE BUILDS | Arquitetura Digital de Elite</title>
+    <meta name="description" content="Sites de alta performance e conversão para profissionais que dominam o que fazem. Design industrial, foco em resultado.">
+    <meta property="og:title" content="KAIQUE BUILDS | Arquitetura Digital de Elite">
+    <meta property="og:description" content="Não entrego apenas sites. Construo máquinas de conversão para profissionais que são os melhores no que fazem.">
+    <meta property="og:type" content="website">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -72,13 +76,25 @@
 
         .text-orange { color: #ff5722; }
         .bg-orange { background-color: #ff5722; }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 90;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .sticky-cta { display: block; }
+        }
     </style>
 </head>
 <body class="antialiased industrial-bg">
 
     <nav class="fixed top-0 w-full z-[100] bg-[#0a0a0a] border-b-4 border-[#ff5722] px-6 py-4 flex justify-between items-center">
-        <div class="heading-font text-2xl tracking-tighter italic">
-            LP<span class="text-orange">PRO</span>
+        <div class="heading-font text-xl md:text-2xl tracking-tighter italic">
+            KAIQUE<span class="text-orange"> BUILDS</span>
         </div>
         <a href="https://wa.me/5567981194737" class="bg-orange text-white text-[10px] px-4 py-2 font-black uppercase">Falar com Desenvolvedor</a>
     </nav>
@@ -103,9 +119,6 @@
         <div class="mb-16">
             <h2 class="heading-font text-3xl uppercase italic mb-2">Projetos que <span class="text-orange">Vendem</span></h2>
             <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest">Confira o nível das estruturas que entrego</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div data-aos="fade-up">
                 <a href="https://zeromato67.vercel.app/" target="_blank" class="work-card">
                     <i class="fas fa-leaf text-4xl text-orange mb-6"></i>
@@ -166,10 +179,10 @@
         </div>
     </section>
 
-    <footer class="bg-black py-16 px-6 border-t border-zinc-900">
+    <footer class="bg-black py-16 px-6 border-t border-zinc-900 pb-32 md:pb-16">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div class="text-center md:text-left">
-                <div class="heading-font text-4xl italic mb-2">LP<span class="text-orange">PRO</span></div>
+                <div class="heading-font text-3xl md:text-4xl italic mb-2">KAIQUE<span class="text-orange"> BUILDS</span></div>
                 <p class="text-zinc-600 text-[11px] font-black uppercase tracking-[0.3em]">Arquitetura de Conversão de Elite</p>
             </div>
             <div class="flex flex-col items-center md:items-end">
@@ -178,11 +191,15 @@
                     <a href="https://wa.me/5567981194737" class="text-zinc-500 hover:text-orange transition-all scale-125"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 <p class="text-zinc-700 text-[9px] font-bold uppercase tracking-widest text-center md:text-right">
-                    © 2026 LP PRO • Mato Grosso do Sul • Brasil
+                    © 2026 KAIQUE BUILDS • Mato Grosso do Sul • Brasil
                 </p>
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/5567981194737" class="sticky-cta bg-orange text-white text-center py-4 font-black uppercase text-sm tracking-widest flex items-center justify-center gap-2">
+        <i class="fab fa-whatsapp text-xl"></i> Falar com Desenvolvedor
+    </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init({ duration: 800, once: true }); </script>
