@@ -3,101 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0A0A0A">
-<title>Kaique Builds | Sites que ganham a briga pelo cliente</title>
-<meta name="description" content="Sites de alta conversão para quem não aceita ficar atrás da concorrência. Estrutura, força visual e resultado.">
+<meta name="theme-color" content="#08090A">
+<title>Kaique Builds | Sites que colocam seu negócio à frente</title>
+<meta name="description" content="Sites enxutos, rápidos e feitos pra conversão. Sem exagero, sem enrolação — só estrutura que funciona.">
 <meta property="og:title" content="Kaique Builds">
-<meta property="og:description" content="Sites que ganham a briga pelo cliente.">
+<meta property="og:description" content="Sites que colocam seu negócio à frente.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='72' font-size='64' font-weight='900' fill='%23E10600' text-anchor='middle' font-family='Arial'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2308090A'/%3E%3Ctext x='50' y='70' font-size='58' font-weight='700' fill='%2300D9B5' text-anchor='middle' font-family='Arial'%3EK%3C/text%3E%3C/svg%3E">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --black:#0A0A0A;
-    --black-deep:#000000;
-    --red:#E10600;
-    --paper:#F5F5F0;
-    --gray:#9A9A9A;
+    --bg:#08090A;
+    --surface1:#0F1011;
+    --surface2:#151617;
+    --border:rgba(255,255,255,0.08);
+    --border-strong:rgba(255,255,255,0.16);
+    --text:#F5F6F7;
+    --text-2:#9BA1A9;
+    --accent:#00D9B5;
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    background:var(--black);
-    color:var(--paper);
+    background:var(--bg);
+    color:var(--text);
     font-family:'Inter',sans-serif;
-    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
   }
-  .display{
-    font-family:'Anton',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.01em;
-    line-height:0.95;
+  .tracking-tight2{ letter-spacing:-0.02em; }
+  .panel{
+    background:var(--surface1);
+    border:1px solid var(--border);
+    border-radius:12px;
   }
-  .banner{
-    position:relative;
-    display:inline-block;
-  }
-  .banner::before{
-    content:'';
-    position:absolute;
-    inset:-6% -4%;
-    background:var(--red);
-    transform:skewY(-2deg);
-    z-index:-1;
-    transform-origin:left;
-    animation:slide-in .7s cubic-bezier(.2,.8,.2,1) both;
-  }
-  @keyframes slide-in{
-    from{ transform:skewY(-2deg) scaleX(0); }
-    to{ transform:skewY(-2deg) scaleX(1); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .banner::before{ animation:none; }
-  }
+  .panel:hover{ border-color:var(--border-strong); }
   .btn-primary{
-    background:var(--red);
-    color:#fff;
-    font-family:'Anton',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-    padding:1rem 2rem;
+    background:var(--accent);
+    color:#06110D;
+    font-weight:650;
+    padding:0.8rem 1.5rem;
+    border-radius:8px;
     display:inline-flex;
     align-items:center;
-    gap:12px;
-    border:3px solid var(--paper);
-    transition:transform .15s ease;
+    gap:8px;
+    transition:opacity .15s ease;
   }
-  .btn-primary:active{ transform:translate(2px,2px); }
-  .card{
-    background:#141414;
-    border:2px solid #2a2a2a;
-    padding:1.75rem;
-    position:relative;
-    transition:border-color .2s ease, background .2s ease;
+  .btn-primary:hover{ opacity:0.88; }
+  .btn-ghost{
+    border:1px solid var(--border-strong);
+    color:var(--text);
+    padding:0.75rem 1.4rem;
+    border-radius:8px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:border-color .15s ease;
   }
-  .card:hover{ border-color:var(--red); background:#181818; }
-  .badge{
-    font-family:'Anton',sans-serif;
-    background:var(--red);
-    color:#fff;
-    padding:2px 10px;
-    display:inline-block;
-    position:absolute;
-    top:-14px;
-    left:20px;
-    font-size:14px;
+  .btn-ghost:hover{ border-color:var(--accent); }
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    animation:reveal .6s ease-out forwards;
   }
-  .stat-strip{
-    background:var(--red);
-    color:var(--black-deep);
-    clip-path:polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  .reveal-2{ animation-delay:.12s; }
+  .reveal-3{ animation-delay:.24s; }
+  @keyframes reveal{ to{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ animation:none; opacity:1; transform:none; }
   }
-  table.tape th, table.tape td{ padding:0.9rem 1rem; text-align:left; }
-  table.tape th{ background:var(--red); color:#fff; font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; letter-spacing:0.03em; }
-  table.tape td{ border-bottom:1px solid #2a2a2a; }
+  .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block; }
   .sticky-cta{ position:fixed; bottom:0; left:0; width:100%; z-index:90; display:none; }
   @media (max-width:768px){ .sticky-cta{ display:flex; } }
 </style>
@@ -105,151 +82,167 @@
 <body class="antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full z-[100] bg-[var(--black)]/95 backdrop-blur border-b-2 border-[var(--red)] px-5 md:px-10 py-3 flex justify-between items-center">
-    <div class="display text-lg md:text-2xl">Kaique<span class="text-[var(--red)]"> Builds</span></div>
-    <a href="https://wa.me/5567981194737" class="btn-primary text-xs md:text-sm py-2 px-4 border-2">Falar agora</a>
+  <nav class="fixed top-0 w-full z-[100] bg-[var(--bg)]/90 backdrop-blur border-b border-[var(--border)] px-5 md:px-10 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2 font-semibold text-sm tracking-tight2">
+      <span class="dot"></span> Kaique Builds
+    </div>
+    <a href="https://wa.me/5567981194737" class="btn-primary text-xs md:text-sm py-2 px-4">Pedir orçamento</a>
   </nav>
 
   <!-- HERO -->
-  <header class="pt-32 md:pt-40 pb-20 px-5 md:px-10 max-w-5xl mx-auto">
-    <h1 class="display text-4xl md:text-7xl mb-8">
-      Enquanto seu site<br>
-      <span class="banner px-2">não converte,</span><br>
-      seu concorrente fatura.
+  <header class="pt-32 md:pt-44 pb-16 px-5 md:px-10 max-w-5xl mx-auto text-center">
+    <h1 class="reveal tracking-tight2 text-4xl md:text-6xl font-[650] leading-[1.05] mb-6 max-w-3xl mx-auto">
+      Sites que colocam seu negócio à frente.
     </h1>
-    <p class="text-[var(--gray)] text-base md:text-xl mb-10 max-w-xl">
-      Eu construo sites de alta performance pra profissionais que não aceitam ficar pra trás. Estrutura, força visual e um caminho direto até o clique.
+    <p class="reveal reveal-2 text-[var(--text-2)] text-base md:text-lg mb-10 max-w-lg mx-auto">
+      Estrutura enxuta, carregamento rápido e um caminho claro até o WhatsApp. Sem exagero, sem enrolação.
     </p>
-    <a href="https://wa.me/5567981194737" class="btn-primary text-base md:text-lg">Falar com Kaique</a>
+    <div class="reveal reveal-3 flex flex-wrap gap-3 justify-center">
+      <a href="https://wa.me/5567981194737" class="btn-primary">Pedir orçamento</a>
+      <a href="#projetos" class="btn-ghost">Ver projetos</a>
+    </div>
   </header>
 
-  <!-- STATS -->
-  <section class="stat-strip py-14 px-5 md:px-10 my-4">
-    <div class="max-w-5xl mx-auto grid grid-cols-3 gap-6 text-center">
-      <div>
-        <p class="display text-4xl md:text-6xl">12+</p>
-        <p class="font-semibold text-xs md:text-sm uppercase tracking-wide mt-1">Sites entregues</p>
+  <!-- PRODUCT PREVIEW MOCK -->
+  <section class="px-5 md:px-10 max-w-4xl mx-auto pb-24 reveal reveal-3">
+    <div class="panel p-3 md:p-4">
+      <div class="flex gap-1.5 mb-3 px-1">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-strong)]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-strong)]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-strong)]"></span>
       </div>
-      <div>
-        <p class="display text-4xl md:text-6xl">100%</p>
-        <p class="font-semibold text-xs md:text-sm uppercase tracking-wide mt-1">Otimizado pra celular</p>
+      <div class="bg-[var(--surface2)] rounded-lg p-4 md:p-6">
+        <div class="h-6 md:h-8 w-1/3 bg-[var(--border-strong)] rounded mb-4"></div>
+        <div class="h-24 md:h-32 w-full bg-[var(--border)] rounded mb-4"></div>
+        <div class="flex gap-3 mb-4">
+          <div class="h-9 w-28 bg-[var(--accent)] rounded"></div>
+          <div class="h-9 w-28 border border-[var(--border-strong)] rounded"></div>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="h-14 bg-[var(--border)] rounded"></div>
+          <div class="h-14 bg-[var(--border)] rounded"></div>
+          <div class="h-14 bg-[var(--border)] rounded"></div>
+        </div>
       </div>
-      <div>
-        <p class="display text-4xl md:text-6xl">24H</p>
-        <p class="font-semibold text-xs md:text-sm uppercase tracking-wide mt-1">Tempo de resposta</p>
+    </div>
+  </section>
+
+  <!-- BENTO: POR QUE -->
+  <section class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
+    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Por que funciona</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="panel p-8 md:col-span-2 md:row-span-2 flex flex-col justify-between">
+        <p class="text-[var(--text-2)] text-sm mb-8">Cada site é construído com um único objetivo</p>
+        <p class="tracking-tight2 text-3xl md:text-5xl font-[650] leading-tight">Fazer seu visitante virar cliente, não só olhar.</p>
+      </div>
+      <div class="panel p-6">
+        <p class="tracking-tight2 text-2xl font-[650] mb-2">100%</p>
+        <p class="text-[var(--text-2)] text-sm">Otimizado pra celular, onde 9 em cada 10 clientes vão te achar.</p>
+      </div>
+      <div class="panel p-6">
+        <p class="tracking-tight2 text-2xl font-[650] mb-2">1 clique</p>
+        <p class="text-[var(--text-2)] text-sm">Do site até o WhatsApp, sem formulário, sem fricção.</p>
+      </div>
+      <div class="panel p-6 md:col-span-3">
+        <p class="text-[var(--text-2)] text-sm">Entrega rápida, código limpo, sem dependência de templates genéricos que travam no celular.</p>
       </div>
     </div>
   </section>
 
   <!-- PROJETOS -->
-  <section class="py-20 px-5 md:px-10 max-w-5xl mx-auto">
-    <h2 class="display text-3xl md:text-5xl mb-12">Projetos que já <span class="text-[var(--red)]">venceram</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-      <a href="https://zeromato67.vercel.app/" target="_blank" class="card">
-        <span class="badge">01</span>
-        <h3 class="display text-2xl mb-3 mt-2">Zero Mato</h3>
-        <p class="text-[var(--gray)] text-sm mb-4">Jardinagem e manutenção. Foco em autoridade e orçamento rápido.</p>
-        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
+  <section id="projetos" class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
+    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Projetos entregues</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="https://zeromato67.vercel.app/" target="_blank" class="panel p-6 block">
+        <p class="font-[650] mb-1">Zero Mato</p>
+        <p class="text-[var(--text-2)] text-sm mb-4">Jardinagem e manutenção — autoridade e orçamento rápido.</p>
+        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
       </a>
-      <a href="https://eletricista-olive.vercel.app/" target="_blank" class="card">
-        <span class="badge">02</span>
-        <h3 class="display text-2xl mb-3 mt-2">Portão Pro</h3>
-        <p class="text-[var(--gray)] text-sm mb-4">Segurança e automação residencial. Autoridade técnica e confiança.</p>
-        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
+      <a href="https://eletricista-olive.vercel.app/" target="_blank" class="panel p-6 block">
+        <p class="font-[650] mb-1">Portão Pro</p>
+        <p class="text-[var(--text-2)] text-sm mb-4">Segurança e automação residencial — confiança técnica.</p>
+        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
       </a>
-      <a href="https://zeromat.vercel.app/" target="_blank" class="card">
-        <span class="badge">03</span>
-        <h3 class="display text-2xl mb-3 mt-2">Clímax</h3>
-        <p class="text-[var(--gray)] text-sm mb-4">Climatização de alto padrão. Layout focado em contratos VIP.</p>
-        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
+      <a href="https://zeromat.vercel.app/" target="_blank" class="panel p-6 block">
+        <p class="font-[650] mb-1">Clímax</p>
+        <p class="text-[var(--text-2)] text-sm mb-4">Climatização de alto padrão — foco em contratos VIP.</p>
+        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
       </a>
-      <a href="https://www.eletricistacampograndems.com/" target="_blank" class="card">
-        <span class="badge">04</span>
-        <h3 class="display text-2xl mb-3 mt-2">SOS Eletricista</h3>
-        <p class="text-[var(--gray)] text-sm mb-4">Emergência 24h. Clique direto pro WhatsApp em qualquer tela.</p>
-        <span class="text-[var(--red)] font-semibold text-sm">Ver site</span>
+      <a href="https://www.eletricistacampograndems.com/" target="_blank" class="panel p-6 block">
+        <p class="font-[650] mb-1">SOS Eletricista</p>
+        <p class="text-[var(--text-2)] text-sm mb-4">Emergência 24h — clique direto pro WhatsApp.</p>
+        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
       </a>
     </div>
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section class="py-20 px-5 md:px-10 max-w-5xl mx-auto border-t border-[#2a2a2a]">
-    <h2 class="display text-3xl md:text-5xl mb-12">Quem contratou <span class="text-[var(--red)]">aprova</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="card border-t-4 border-t-[var(--red)]">
-        <p class="text-5xl text-[var(--red)] leading-none mb-2">"</p>
-        <p class="text-sm mb-6 text-[var(--paper)]/90">Depoimento real do cliente aqui — o resultado prático depois do site no ar.</p>
-        <p class="font-bold text-sm">Nome do cliente</p>
-        <p class="text-[var(--gray)] text-xs">Ramo · Cidade</p>
+  <section class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
+    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Quem já trabalhou comigo</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="panel p-6">
+        <p class="text-sm text-[var(--text)]/90 mb-6">Depoimento real do cliente — o resultado prático depois do site no ar.</p>
+        <p class="font-medium text-sm">Nome do cliente</p>
+        <p class="text-[var(--text-2)] text-xs">Ramo · Cidade</p>
       </div>
-      <div class="card border-t-4 border-t-[var(--red)]">
-        <p class="text-5xl text-[var(--red)] leading-none mb-2">"</p>
-        <p class="text-sm mb-6 text-[var(--paper)]/90">Depoimento real do cliente aqui — o resultado prático depois do site no ar.</p>
-        <p class="font-bold text-sm">Nome do cliente</p>
-        <p class="text-[var(--gray)] text-xs">Ramo · Cidade</p>
+      <div class="panel p-6">
+        <p class="text-sm text-[var(--text)]/90 mb-6">Depoimento real do cliente — o resultado prático depois do site no ar.</p>
+        <p class="font-medium text-sm">Nome do cliente</p>
+        <p class="text-[var(--text-2)] text-xs">Ramo · Cidade</p>
       </div>
-      <div class="card border-t-4 border-t-[var(--red)]">
-        <p class="text-5xl text-[var(--red)] leading-none mb-2">"</p>
-        <p class="text-sm mb-6 text-[var(--paper)]/90">Depoimento real do cliente aqui — o resultado prático depois do site no ar.</p>
-        <p class="font-bold text-sm">Nome do cliente</p>
-        <p class="text-[var(--gray)] text-xs">Ramo · Cidade</p>
+      <div class="panel p-6">
+        <p class="text-sm text-[var(--text)]/90 mb-6">Depoimento real do cliente — o resultado prático depois do site no ar.</p>
+        <p class="font-medium text-sm">Nome do cliente</p>
+        <p class="text-[var(--text-2)] text-xs">Ramo · Cidade</p>
       </div>
     </div>
   </section>
 
   <!-- PACOTES -->
-  <section class="py-20 px-5 md:px-10 max-w-5xl mx-auto border-t border-[#2a2a2a]">
-    <h2 class="display text-3xl md:text-5xl mb-12">Escolha seu <span class="text-[var(--red)]">pacote</span></h2>
-    <div class="overflow-x-auto">
-      <table class="tape w-full text-sm min-w-[560px]">
-        <thead>
-          <tr><th>Pacote</th><th>Inclui</th><th>Valor</th><th></th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="font-bold">Essencial</td>
-            <td class="text-[var(--gray)]">1 página, mobile, botão de WhatsApp</td>
-            <td class="font-bold">R$ XXX</td>
-            <td><a href="https://wa.me/5567981194737" class="text-[var(--red)] font-semibold hover:underline">Pedir</a></td>
-          </tr>
-          <tr>
-            <td class="font-bold">Profissional</td>
-            <td class="text-[var(--gray)]">Site completo, SEO básico, galeria, suporte</td>
-            <td class="font-bold">R$ XXX</td>
-            <td><a href="https://wa.me/5567981194737" class="text-[var(--red)] font-semibold hover:underline">Pedir</a></td>
-          </tr>
-          <tr>
-            <td class="font-bold">Elite</td>
-            <td class="text-[var(--gray)]">Tudo do Profissional + domínio, hospedagem, integrações</td>
-            <td class="font-bold">R$ XXX</td>
-            <td><a href="https://wa.me/5567981194737" class="text-[var(--red)] font-semibold hover:underline">Pedir</a></td>
-          </tr>
-        </tbody>
-      </table>
+  <section class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
+    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Pacotes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="panel p-6 flex flex-col">
+        <p class="font-[650] mb-1">Essencial</p>
+        <p class="tracking-tight2 text-3xl font-[650] mb-4">R$ XXX</p>
+        <p class="text-[var(--text-2)] text-sm mb-6 flex-1">1 página, mobile, botão de WhatsApp.</p>
+        <a href="https://wa.me/5567981194737" class="btn-ghost justify-center text-sm">Pedir</a>
+      </div>
+      <div class="panel p-6 flex flex-col border-[var(--accent)]">
+        <p class="font-[650] mb-1">Profissional</p>
+        <p class="tracking-tight2 text-3xl font-[650] mb-4">R$ XXX</p>
+        <p class="text-[var(--text-2)] text-sm mb-6 flex-1">Site completo, SEO básico, galeria, suporte.</p>
+        <a href="https://wa.me/5567981194737" class="btn-primary justify-center text-sm">Pedir</a>
+      </div>
+      <div class="panel p-6 flex flex-col">
+        <p class="font-[650] mb-1">Elite</p>
+        <p class="tracking-tight2 text-3xl font-[650] mb-4">R$ XXX</p>
+        <p class="text-[var(--text-2)] text-sm mb-6 flex-1">Tudo do Profissional + domínio, hospedagem, integrações.</p>
+        <a href="https://wa.me/5567981194737" class="btn-ghost justify-center text-sm">Pedir</a>
+      </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section class="py-24 px-5 md:px-10 border-t-4 border-[var(--red)] text-center">
-    <h2 class="display text-4xl md:text-7xl mb-8 max-w-3xl mx-auto leading-none">
-      Pare de perder pra quem tem site pior que o seu trabalho.
-    </h2>
-    <a href="https://wa.me/5567981194737" class="btn-primary text-base md:text-xl">Falar com Kaique agora</a>
+  <section class="px-5 md:px-10 max-w-3xl mx-auto pb-28 text-center">
+    <span class="dot mb-4 inline-block"></span>
+    <h2 class="tracking-tight2 text-3xl md:text-5xl font-[650] mb-6 leading-tight">Pronto pra ter um site que trabalha por você?</h2>
+    <a href="https://wa.me/5567981194737" class="btn-primary text-base px-6 py-3">Pedir orçamento</a>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-12 px-5 md:px-10 border-t border-[#2a2a2a]">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="display text-xl">Kaique<span class="text-[var(--red)]"> Builds</span></div>
-      <div class="flex gap-6 text-sm">
-        <a href="https://wa.me/5567981194737" class="hover:text-[var(--red)]">WhatsApp</a>
-        <a href="#" class="hover:text-[var(--red)]">Instagram</a>
+  <footer class="px-5 md:px-10 py-10 border-t border-[var(--border)]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2 font-medium text-sm"><span class="dot"></span> Kaique Builds</div>
+      <div class="flex gap-6 text-sm text-[var(--text-2)]">
+        <a href="https://wa.me/5567981194737" class="hover:text-[var(--accent)]">WhatsApp</a>
+        <a href="#" class="hover:text-[var(--accent)]">Instagram</a>
       </div>
-      <p class="text-[var(--gray)] text-xs">© 2026 Kaique Builds · Mato Grosso do Sul</p>
+      <p class="text-[var(--text-2)] text-xs">© 2026 Kaique Builds · MS</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/5567981194737" class="sticky-cta btn-primary justify-center rounded-none text-sm py-4 border-0">Falar com Kaique agora</a>
+  <a href="https://wa.me/5567981194737" class="sticky-cta btn-primary justify-center rounded-none text-sm py-4">Pedir orçamento</a>
 
 </body>
 </html>
