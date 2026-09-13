@@ -3,78 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08090A">
-<title>Kaique Builds | Sites que colocam seu negócio à frente</title>
-<meta name="description" content="Sites enxutos, rápidos e feitos pra conversão. Sem exagero, sem enrolação — só estrutura que funciona.">
+<meta name="theme-color" content="#0A0A0A">
+<title>Kaique Builds | Site pronto pra transformar visita em cliente</title>
+<meta name="description" content="Sites feitos pra negócios locais que querem parar de perder cliente pra concorrência. Estrutura, entrega rápida e suporte de verdade.">
 <meta property="og:title" content="Kaique Builds">
-<meta property="og:description" content="Sites que colocam seu negócio à frente.">
+<meta property="og:description" content="Site pronto pra transformar visita em cliente.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2308090A'/%3E%3Ctext x='50' y='70' font-size='58' font-weight='700' fill='%2300D9B5' text-anchor='middle' font-family='Arial'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='70' font-size='58' font-weight='800' fill='%23FF5C1A' text-anchor='middle' font-family='Arial'%3EK%3C/text%3E%3C/svg%3E">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#08090A;
-    --surface1:#0F1011;
-    --surface2:#151617;
-    --border:rgba(255,255,255,0.08);
-    --border-strong:rgba(255,255,255,0.16);
-    --text:#F5F6F7;
-    --text-2:#9BA1A9;
-    --accent:#00D9B5;
+    --bg:#0A0A0A;
+    --card:#141414;
+    --card-2:#181818;
+    --border:rgba(255,255,255,0.09);
+    --orange:#FF5C1A;
+    --gold:#D4A657;
+    --white:#F5F5F0;
+    --gray:#9CA3AE;
   }
   *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .tracking-tight2{ letter-spacing:-0.02em; }
-  .panel{
-    background:var(--surface1);
-    border:1px solid var(--border);
-    border-radius:12px;
-  }
-  .panel:hover{ border-color:var(--border-strong); }
+  body{ margin:0; background:var(--bg); color:var(--white); font-family:'Inter',sans-serif; }
+  .accent-word{ font-family:'Playfair Display',serif; font-style:italic; color:var(--gold); font-weight:500; }
+  .eyebrow{ color:var(--gold); text-transform:uppercase; letter-spacing:0.12em; font-size:12px; font-weight:600; }
   .btn-primary{
-    background:var(--accent);
-    color:#06110D;
-    font-weight:650;
-    padding:0.8rem 1.5rem;
-    border-radius:8px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:opacity .15s ease;
+    background:var(--orange); color:#fff; font-weight:700; padding:1rem 1.75rem; border-radius:999px;
+    display:inline-flex; align-items:center; gap:10px;
+    box-shadow:0 0 40px 6px rgba(255,92,26,0.35);
+    transition:transform .15s ease, box-shadow .15s ease;
   }
-  .btn-primary:hover{ opacity:0.88; }
+  .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 0 50px 10px rgba(255,92,26,0.45); }
   .btn-ghost{
-    border:1px solid var(--border-strong);
-    color:var(--text);
-    padding:0.75rem 1.4rem;
-    border-radius:8px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:border-color .15s ease;
+    border:1px solid var(--border); color:var(--white); padding:0.95rem 1.7rem; border-radius:999px;
+    display:inline-flex; align-items:center; gap:10px;
   }
-  .btn-ghost:hover{ border-color:var(--accent); }
-  .reveal{
-    opacity:0;
-    transform:translateY(14px);
-    animation:reveal .6s ease-out forwards;
-  }
-  .reveal-2{ animation-delay:.12s; }
-  .reveal-3{ animation-delay:.24s; }
-  @keyframes reveal{ to{ opacity:1; transform:translateY(0); } }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ animation:none; opacity:1; transform:none; }
-  }
-  .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block; }
+  .pill{ background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:999px; }
+  .card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.75rem; }
+  .icon-badge{ width:44px; height:44px; border-radius:12px; background:rgba(212,166,87,0.12); display:flex; align-items:center; justify-content:center; color:var(--gold); }
+  .check{ color:var(--gold); }
+  details summary{ cursor:pointer; list-style:none; }
+  details summary::-webkit-details-marker{ display:none; }
+  .plus{ transition:transform .2s ease; }
+  details[open] .plus{ transform:rotate(45deg); }
+
+  .carousel{ display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; -webkit-overflow-scrolling:touch; }
+  .carousel::-webkit-scrollbar{ height:6px; }
+  .carousel::-webkit-scrollbar-thumb{ background:var(--border); border-radius:4px; }
+  .carousel-card{ scroll-snap-align:start; flex:0 0 200px; border-radius:16px; overflow:hidden; border:1px solid var(--border); }
+
+  .reveal-init{ opacity:0; transform:translateY(18px); }
+  .reveal-in{ opacity:1; transform:none; transition:opacity .7s ease, transform .7s ease; }
+
+  .guarantee-circle{ width:140px; height:140px; position:relative; margin:0 auto; }
+  .guarantee-circle svg{ width:100%; height:100%; }
+  .guarantee-num{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; color:var(--gold); }
+
   .sticky-cta{ position:fixed; bottom:0; left:0; width:100%; z-index:90; display:none; }
   @media (max-width:768px){ .sticky-cta{ display:flex; } }
 </style>
@@ -82,167 +68,244 @@
 <body class="antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full z-[100] bg-[var(--bg)]/90 backdrop-blur border-b border-[var(--border)] px-5 md:px-10 py-4 flex justify-between items-center">
-    <div class="flex items-center gap-2 font-semibold text-sm tracking-tight2">
-      <span class="dot"></span> Kaique Builds
-    </div>
-    <a href="https://wa.me/5567981194737" class="btn-primary text-xs md:text-sm py-2 px-4">Pedir orçamento</a>
+  <nav class="fixed top-0 w-full z-[100] bg-[var(--bg)]/90 backdrop-blur border-b border-[var(--border)] px-5 md:px-10 py-3 flex justify-between items-center">
+    <div class="font-bold text-base md:text-lg">Kaique <span class="text-[var(--orange)]">Builds</span></div>
+    <a href="https://wa.me/5567981194737" class="btn-primary text-xs md:text-sm py-2 px-4">Falar agora</a>
   </nav>
 
   <!-- HERO -->
-  <header class="pt-32 md:pt-44 pb-16 px-5 md:px-10 max-w-5xl mx-auto text-center">
-    <h1 class="reveal tracking-tight2 text-4xl md:text-6xl font-[650] leading-[1.05] mb-6 max-w-3xl mx-auto">
-      Sites que colocam seu negócio à frente.
+  <header class="pt-28 md:pt-36 pb-16 px-5 md:px-10 max-w-2xl mx-auto text-center">
+    <div class="reveal-init pill inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs md:text-sm">
+      <span class="w-2 h-2 rounded-full bg-[var(--gold)]"></span>
+      <span class="font-semibold">12+ sites entregues</span>
+      <span class="text-[var(--gray)]">pra negócios locais</span>
+    </div>
+    <h1 class="reveal-init text-3xl md:text-6xl font-bold leading-tight mb-6">
+      Site pronto pra transformar visita em <span class="accent-word">cliente</span>.
     </h1>
-    <p class="reveal reveal-2 text-[var(--text-2)] text-base md:text-lg mb-10 max-w-lg mx-auto">
-      Estrutura enxuta, carregamento rápido e um caminho claro até o WhatsApp. Sem exagero, sem enrolação.
+    <p class="reveal-init text-[var(--gray)] text-base md:text-lg mb-8">
+      Estrutura pensada pra vender, carregamento rápido e caminho direto até o WhatsApp — sem enrolação.
     </p>
-    <div class="reveal reveal-3 flex flex-wrap gap-3 justify-center">
-      <a href="https://wa.me/5567981194737" class="btn-primary">Pedir orçamento</a>
+    <div class="reveal-init flex flex-wrap gap-3 justify-center mb-10">
+      <a href="https://wa.me/5567981194737" class="btn-primary">Pedir orçamento <span>→</span></a>
       <a href="#projetos" class="btn-ghost">Ver projetos</a>
+    </div>
+    <div class="reveal-init grid grid-cols-2 gap-3 max-w-sm mx-auto text-left text-sm text-[var(--gray)]">
+      <div class="flex items-center gap-2"><span class="check">✓</span> 100% mobile</div>
+      <div class="flex items-center gap-2"><span class="check">✓</span> Direto no WhatsApp</div>
+      <div class="flex items-center gap-2"><span class="check">✓</span> Entrega rápida</div>
+      <div class="flex items-center gap-2"><span class="check">✓</span> Suporte incluso</div>
     </div>
   </header>
 
-  <!-- PRODUCT PREVIEW MOCK -->
-  <section class="px-5 md:px-10 max-w-4xl mx-auto pb-24 reveal reveal-3">
-    <div class="panel p-3 md:p-4">
-      <div class="flex gap-1.5 mb-3 px-1">
-        <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-strong)]"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-strong)]"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-strong)]"></span>
+  <!-- COMO FUNCIONA -->
+  <section class="px-5 md:px-10 max-w-2xl mx-auto pb-20">
+    <p class="reveal-init eyebrow mb-3 text-center">Como funciona</p>
+    <h2 class="reveal-init text-2xl md:text-4xl font-bold mb-3 text-center">Um caminho organizado, em 4 etapas.</h2>
+    <p class="reveal-init text-[var(--gray)] text-center mb-10 max-w-md mx-auto">Sem enrolação nem promessa vaga — você sabe exatamente o que acontece em cada fase.</p>
+    <div class="space-y-4">
+      <div class="reveal-init card">
+        <div class="icon-badge mb-4">1</div>
+        <p class="eyebrow mb-1">Etapa 01</p>
+        <p class="font-semibold mb-1">Diagnóstico</p>
+        <p class="text-[var(--gray)] text-sm">Entendo seu negócio, seu cliente e o que precisa aparecer no site pra gerar contato.</p>
       </div>
-      <div class="bg-[var(--surface2)] rounded-lg p-4 md:p-6">
-        <div class="h-6 md:h-8 w-1/3 bg-[var(--border-strong)] rounded mb-4"></div>
-        <div class="h-24 md:h-32 w-full bg-[var(--border)] rounded mb-4"></div>
-        <div class="flex gap-3 mb-4">
-          <div class="h-9 w-28 bg-[var(--accent)] rounded"></div>
-          <div class="h-9 w-28 border border-[var(--border-strong)] rounded"></div>
-        </div>
-        <div class="grid grid-cols-3 gap-3">
-          <div class="h-14 bg-[var(--border)] rounded"></div>
-          <div class="h-14 bg-[var(--border)] rounded"></div>
-          <div class="h-14 bg-[var(--border)] rounded"></div>
-        </div>
+      <div class="reveal-init card">
+        <div class="icon-badge mb-4">2</div>
+        <p class="eyebrow mb-1">Etapa 02</p>
+        <p class="font-semibold mb-1">Estrutura & conteúdo</p>
+        <p class="text-[var(--gray)] text-sm">Organizo as seções e textos na ordem que leva o visitante até o contato.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- BENTO: POR QUE -->
-  <section class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
-    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Por que funciona</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="panel p-8 md:col-span-2 md:row-span-2 flex flex-col justify-between">
-        <p class="text-[var(--text-2)] text-sm mb-8">Cada site é construído com um único objetivo</p>
-        <p class="tracking-tight2 text-3xl md:text-5xl font-[650] leading-tight">Fazer seu visitante virar cliente, não só olhar.</p>
+      <div class="reveal-init card">
+        <div class="icon-badge mb-4">3</div>
+        <p class="eyebrow mb-1">Etapa 03</p>
+        <p class="font-semibold mb-1">Design & desenvolvimento</p>
+        <p class="text-[var(--gray)] text-sm">Construo o site de verdade, testado em celular e computador.</p>
       </div>
-      <div class="panel p-6">
-        <p class="tracking-tight2 text-2xl font-[650] mb-2">100%</p>
-        <p class="text-[var(--text-2)] text-sm">Otimizado pra celular, onde 9 em cada 10 clientes vão te achar.</p>
-      </div>
-      <div class="panel p-6">
-        <p class="tracking-tight2 text-2xl font-[650] mb-2">1 clique</p>
-        <p class="text-[var(--text-2)] text-sm">Do site até o WhatsApp, sem formulário, sem fricção.</p>
-      </div>
-      <div class="panel p-6 md:col-span-3">
-        <p class="text-[var(--text-2)] text-sm">Entrega rápida, código limpo, sem dependência de templates genéricos que travam no celular.</p>
+      <div class="reveal-init card">
+        <div class="icon-badge mb-4">4</div>
+        <p class="eyebrow mb-1">Etapa 04</p>
+        <p class="font-semibold mb-1">Entrega & suporte</p>
+        <p class="text-[var(--gray)] text-sm">Site no ar e acompanhamento pra qualquer ajuste que precisar depois.</p>
       </div>
     </div>
   </section>
 
-  <!-- PROJETOS -->
-  <section id="projetos" class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
-    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Projetos entregues</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <a href="https://zeromato67.vercel.app/" target="_blank" class="panel p-6 block">
-        <p class="font-[650] mb-1">Zero Mato</p>
-        <p class="text-[var(--text-2)] text-sm mb-4">Jardinagem e manutenção — autoridade e orçamento rápido.</p>
-        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
+  <!-- PROJETOS (carrossel) -->
+  <section id="projetos" class="px-5 md:px-10 max-w-4xl mx-auto pb-6">
+    <p class="reveal-init eyebrow mb-2">Projetos</p>
+    <h2 class="reveal-init text-2xl md:text-4xl font-bold mb-8">Sites já entregues</h2>
+  </section>
+  <section class="pl-5 md:pl-10 pb-4 max-w-4xl mx-auto">
+    <div class="carousel reveal-init">
+      <a href="https://zeromato67.vercel.app/" target="_blank" class="carousel-card bg-gradient-to-br from-[#2a1a10] to-[#0A0A0A]">
+        <div class="p-4 flex flex-col justify-end h-64">
+          <p class="eyebrow mb-1">Projeto 01</p>
+          <p class="font-bold text-lg mb-1">Zero Mato</p>
+          <p class="text-[var(--gray)] text-xs mb-4">Jardinagem e manutenção</p>
+          <span class="pill text-center text-xs py-2">Ver site</span>
+        </div>
       </a>
-      <a href="https://eletricista-olive.vercel.app/" target="_blank" class="panel p-6 block">
-        <p class="font-[650] mb-1">Portão Pro</p>
-        <p class="text-[var(--text-2)] text-sm mb-4">Segurança e automação residencial — confiança técnica.</p>
-        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
+      <a href="https://eletricista-olive.vercel.app/" target="_blank" class="carousel-card bg-gradient-to-br from-[#241f0e] to-[#0A0A0A]">
+        <div class="p-4 flex flex-col justify-end h-64">
+          <p class="eyebrow mb-1">Projeto 02</p>
+          <p class="font-bold text-lg mb-1">Portão Pro</p>
+          <p class="text-[var(--gray)] text-xs mb-4">Segurança residencial</p>
+          <span class="pill text-center text-xs py-2">Ver site</span>
+        </div>
       </a>
-      <a href="https://zeromat.vercel.app/" target="_blank" class="panel p-6 block">
-        <p class="font-[650] mb-1">Clímax</p>
-        <p class="text-[var(--text-2)] text-sm mb-4">Climatização de alto padrão — foco em contratos VIP.</p>
-        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
+      <a href="https://zeromat.vercel.app/" target="_blank" class="carousel-card bg-gradient-to-br from-[#1a2024] to-[#0A0A0A]">
+        <div class="p-4 flex flex-col justify-end h-64">
+          <p class="eyebrow mb-1">Projeto 03</p>
+          <p class="font-bold text-lg mb-1">Clímax</p>
+          <p class="text-[var(--gray)] text-xs mb-4">Climatização de alto padrão</p>
+          <span class="pill text-center text-xs py-2">Ver site</span>
+        </div>
       </a>
-      <a href="https://www.eletricistacampograndems.com/" target="_blank" class="panel p-6 block">
-        <p class="font-[650] mb-1">SOS Eletricista</p>
-        <p class="text-[var(--text-2)] text-sm mb-4">Emergência 24h — clique direto pro WhatsApp.</p>
-        <span class="text-[var(--accent)] text-sm font-medium">Ver site ↗</span>
+      <a href="https://www.eletricistacampograndems.com/" target="_blank" class="carousel-card bg-gradient-to-br from-[#241512] to-[#0A0A0A]">
+        <div class="p-4 flex flex-col justify-end h-64">
+          <p class="eyebrow mb-1">Projeto 04</p>
+          <p class="font-bold text-lg mb-1">SOS Eletricista</p>
+          <p class="text-[var(--gray)] text-xs mb-4">Emergência 24h</p>
+          <span class="pill text-center text-xs py-2">Ver site</span>
+        </div>
       </a>
     </div>
+    <p class="text-[var(--gray)] text-xs mt-3">Arraste para o lado →</p>
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
-    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Quem já trabalhou comigo</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="panel p-6">
-        <p class="text-sm text-[var(--text)]/90 mb-6">Depoimento real do cliente — o resultado prático depois do site no ar.</p>
-        <p class="font-medium text-sm">Nome do cliente</p>
-        <p class="text-[var(--text-2)] text-xs">Ramo · Cidade</p>
+  <section class="px-5 md:px-10 max-w-2xl mx-auto py-20">
+    <p class="reveal-init eyebrow mb-2 text-center">Depoimentos</p>
+    <h2 class="reveal-init text-2xl md:text-4xl font-bold mb-10 text-center">Quem contratou aprova</h2>
+    <div class="space-y-4">
+      <div class="reveal-init card">
+        <p class="text-sm mb-4">"Depoimento real do cliente aqui — o resultado prático depois do site no ar."</p>
+        <p class="font-semibold text-sm">Nome do cliente <span class="text-[var(--gray)] font-normal">· Ramo, Cidade</span></p>
       </div>
-      <div class="panel p-6">
-        <p class="text-sm text-[var(--text)]/90 mb-6">Depoimento real do cliente — o resultado prático depois do site no ar.</p>
-        <p class="font-medium text-sm">Nome do cliente</p>
-        <p class="text-[var(--text-2)] text-xs">Ramo · Cidade</p>
-      </div>
-      <div class="panel p-6">
-        <p class="text-sm text-[var(--text)]/90 mb-6">Depoimento real do cliente — o resultado prático depois do site no ar.</p>
-        <p class="font-medium text-sm">Nome do cliente</p>
-        <p class="text-[var(--text-2)] text-xs">Ramo · Cidade</p>
+      <div class="reveal-init card">
+        <p class="text-sm mb-4">"Depoimento real do cliente aqui — o resultado prático depois do site no ar."</p>
+        <p class="font-semibold text-sm">Nome do cliente <span class="text-[var(--gray)] font-normal">· Ramo, Cidade</span></p>
       </div>
     </div>
   </section>
 
-  <!-- PACOTES -->
-  <section class="px-5 md:px-10 max-w-5xl mx-auto pb-24">
-    <h2 class="tracking-tight2 text-2xl md:text-3xl font-[650] mb-8">Pacotes</h2>
+  <!-- PREÇO -->
+  <section class="px-5 md:px-10 max-w-2xl mx-auto pb-20">
+    <p class="reveal-init eyebrow mb-2 text-center">Investimento</p>
+    <h2 class="reveal-init text-2xl md:text-4xl font-bold mb-10 text-center">Garanta seu site.</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="panel p-6 flex flex-col">
-        <p class="font-[650] mb-1">Essencial</p>
-        <p class="tracking-tight2 text-3xl font-[650] mb-4">R$ XXX</p>
-        <p class="text-[var(--text-2)] text-sm mb-6 flex-1">1 página, mobile, botão de WhatsApp.</p>
-        <a href="https://wa.me/5567981194737" class="btn-ghost justify-center text-sm">Pedir</a>
+      <div class="reveal-init card">
+        <p class="font-semibold mb-1">Essencial</p>
+        <p class="text-[var(--gray)] text-xs mb-4">1 página + WhatsApp</p>
+        <p class="text-3xl font-bold mb-4">R$ XXX</p>
+        <a href="https://wa.me/5567981194737" class="btn-ghost w-full justify-center text-sm">Pedir</a>
       </div>
-      <div class="panel p-6 flex flex-col border-[var(--accent)]">
-        <p class="font-[650] mb-1">Profissional</p>
-        <p class="tracking-tight2 text-3xl font-[650] mb-4">R$ XXX</p>
-        <p class="text-[var(--text-2)] text-sm mb-6 flex-1">Site completo, SEO básico, galeria, suporte.</p>
-        <a href="https://wa.me/5567981194737" class="btn-primary justify-center text-sm">Pedir</a>
+      <div class="reveal-init card relative border-[var(--gold)]">
+        <span class="pill absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-semibold text-[var(--gold)] border-[var(--gold)] whitespace-nowrap">Mais pedido</span>
+        <p class="font-semibold mb-1 mt-2">Profissional</p>
+        <p class="text-[var(--gray)] text-xs mb-4">Site completo + SEO + suporte</p>
+        <p class="text-3xl font-bold mb-4">R$ XXX</p>
+        <a href="https://wa.me/5567981194737" class="btn-primary w-full justify-center text-sm">Pedir</a>
       </div>
-      <div class="panel p-6 flex flex-col">
-        <p class="font-[650] mb-1">Elite</p>
-        <p class="tracking-tight2 text-3xl font-[650] mb-4">R$ XXX</p>
-        <p class="text-[var(--text-2)] text-sm mb-6 flex-1">Tudo do Profissional + domínio, hospedagem, integrações.</p>
-        <a href="https://wa.me/5567981194737" class="btn-ghost justify-center text-sm">Pedir</a>
+      <div class="reveal-init card">
+        <p class="font-semibold mb-1">Elite</p>
+        <p class="text-[var(--gray)] text-xs mb-4">Tudo + domínio e hospedagem</p>
+        <p class="text-3xl font-bold mb-4">R$ XXX</p>
+        <a href="https://wa.me/5567981194737" class="btn-ghost w-full justify-center text-sm">Pedir</a>
       </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="reveal-init px-5 md:px-10 max-w-md mx-auto pb-20 text-center">
+    <div class="guarantee-circle mb-6">
+      <svg viewBox="0 0 140 140">
+        <path id="circlePath" fill="none" d="M 70,70 m -55,0 a 55,55 0 1,1 -0.01,0"/>
+        <text font-size="9" fill="var(--gold)" letter-spacing="2">
+          <textPath href="#circlePath">48H DE RESPOSTA • AJUSTES INCLUSOS • </textPath>
+        </text>
+      </svg>
+      <div class="guarantee-num">48H</div>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold mb-3">Resposta em até 48h.</h2>
+    <p class="text-[var(--gray)] text-sm">Sem enrolação: você me chama no WhatsApp e recebe retorno com prazo e valor em até 2 dias.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-5 md:px-10 max-w-2xl mx-auto pb-20">
+    <p class="reveal-init eyebrow mb-2 text-center">Dúvidas comuns</p>
+    <h2 class="reveal-init text-2xl md:text-4xl font-bold mb-10 text-center">Perguntas frequentes.</h2>
+    <div class="space-y-3">
+      <details class="reveal-init card">
+        <summary class="flex justify-between items-center font-semibold text-sm">
+          Quanto tempo demora pra ficar pronto?
+          <span class="plus text-[var(--gold)] text-xl">+</span>
+        </summary>
+        <p class="text-[var(--gray)] text-sm mt-4">Resposta real aqui.</p>
+      </details>
+      <details class="reveal-init card">
+        <summary class="flex justify-between items-center font-semibold text-sm">
+          Preciso ter domínio e hospedagem?
+          <span class="plus text-[var(--gold)] text-xl">+</span>
+        </summary>
+        <p class="text-[var(--gray)] text-sm mt-4">Resposta real aqui.</p>
+      </details>
+      <details class="reveal-init card">
+        <summary class="flex justify-between items-center font-semibold text-sm">
+          E se eu não gostar do resultado?
+          <span class="plus text-[var(--gold)] text-xl">+</span>
+        </summary>
+        <p class="text-[var(--gray)] text-sm mt-4">Resposta real aqui.</p>
+      </details>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section class="px-5 md:px-10 max-w-3xl mx-auto pb-28 text-center">
-    <span class="dot mb-4 inline-block"></span>
-    <h2 class="tracking-tight2 text-3xl md:text-5xl font-[650] mb-6 leading-tight">Pronto pra ter um site que trabalha por você?</h2>
-    <a href="https://wa.me/5567981194737" class="btn-primary text-base px-6 py-3">Pedir orçamento</a>
+  <section class="px-5 md:px-10 max-w-2xl mx-auto pb-24">
+    <div class="reveal-init card text-center py-14">
+      <p class="eyebrow mb-3">Comece agora</p>
+      <h2 class="text-2xl md:text-4xl font-bold mb-4">Vamos construir seu site.</h2>
+      <p class="text-[var(--gray)] text-sm mb-8 max-w-xs mx-auto">Sem promessa vaga. Estrutura, prazo e preço definidos antes de qualquer linha de código.</p>
+      <a href="https://wa.me/5567981194737" class="btn-primary">Pedir orçamento <span>→</span></a>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="px-5 md:px-10 py-10 border-t border-[var(--border)]">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-2 font-medium text-sm"><span class="dot"></span> Kaique Builds</div>
-      <div class="flex gap-6 text-sm text-[var(--text-2)]">
-        <a href="https://wa.me/5567981194737" class="hover:text-[var(--accent)]">WhatsApp</a>
-        <a href="#" class="hover:text-[var(--accent)]">Instagram</a>
+  <footer class="px-5 md:px-10 py-12 border-t border-[var(--border)]">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="font-bold text-lg mb-3">Kaique <span class="text-[var(--orange)]">Builds</span></div>
+      <div class="flex justify-center gap-6 text-sm text-[var(--gray)] mb-6">
+        <a href="#" class="hover:text-[var(--white)]">Como funciona</a>
+        <a href="#projetos" class="hover:text-[var(--white)]">Projetos</a>
+        <a href="#" class="hover:text-[var(--white)]">Pacotes</a>
       </div>
-      <p class="text-[var(--text-2)] text-xs">© 2026 Kaique Builds · MS</p>
+      <p class="text-[var(--gray)] text-xs mb-2">Kaique Builds. Desenvolvimento de sites pra negócios locais.</p>
+      <p class="text-[var(--gray)] text-xs">© 2026 Kaique Builds · Mato Grosso do Sul</p>
     </div>
   </footer>
 
   <a href="https://wa.me/5567981194737" class="sticky-cta btn-primary justify-center rounded-none text-sm py-4">Pedir orçamento</a>
+
+  <script>
+    (function(){
+      var els = document.querySelectorAll('.reveal-init');
+      if(!('IntersectionObserver' in window)){
+        els.forEach(function(el){ el.classList.remove('reveal-init'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.remove('reveal-init');
+            entry.target.classList.add('reveal-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el){ io.observe(el); });
+    })();
+  </script>
 
 </body>
 </html>
